@@ -1,10 +1,10 @@
 double scale=1;
 double mX=0;
 double mY=0;
-int max=4000;
+int max=400;
 float s=1;  //current value of display simplification (1 or sMax)
 float sMax=2;  //simplification if it is ON
-float col=0.35;
+float col=0.25;
 boolean text=true;
 void setup()
 {
@@ -28,6 +28,8 @@ void keyPressed()
   {
     case 38: max/=0.1; break; //v
     case 40: max*=0.1; break; //^
+    case 37: max+=10; break; //<--
+    case 39: max-=10; break; //-->
     case 109: if(sMax>2)sMax-=1; if(s>1) s=sMax; break;  //-
     case 107: sMax+=1; if(s>1) s=sMax; break;  //+=
     case 91: col-=0.025; break; //]
