@@ -22,5 +22,5 @@ Na ekranie widoczny jest podgląd powyższych parametrów.
 Przykładowe kadry:
 ![](Pic_01.jpg)  
 ![](Pic_02.PNG)  
-![](Pic_03.PNG)  
+![](Pic_03.png)  
 ![](Pic_04.PNG)  
