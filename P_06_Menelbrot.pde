@@ -1,11 +1,12 @@
-double scale=1;
-double mX=0;
-double mY=0;
-int max=400;
+double scale=1;  //Zoom value
+double mX=0;  //X position of camera
+double mY=0;  //Y position of camera
+int max=4000;  //number of tests for each pixel
 float s=1;  //current value of display simplification (1 or sMax)
 float sMax=2;  //simplification if it is ON
-float col=0.25;
-boolean text=true;
+float col=0.25;  //color scaling (color is powered by col)
+boolean text=true;  //text is shown
+
 void setup()
 {
   colorMode(HSB,255);
@@ -15,12 +16,14 @@ void setup()
   paint();
 }
 
+//scrolling event
 void mouseWheel(MouseEvent event) {
    scale+=event.getCount()*scale*0.4;
   println("Scale: " + scale);
   paint();
 }
 
+//keyes events
 void keyPressed()
 {
   println(keyCode);
@@ -41,6 +44,7 @@ void keyPressed()
   paint ();
 }
 
+//camera movement function
 void draw()
 {
   if(mouseButton==LEFT && (mouseX-pmouseX!=0 ||mouseY-pmouseY!=0))
@@ -62,11 +66,11 @@ void paint()
 for(int x=0;x<width/s;x++)
   for(int y=0;y<height/s;y++)
   {
-    //float a=map(x,0,width,-2/scale,2/scale);
-    //float b=map(y,0,height,-2/scale,2/scale);
+    //mapping coordinates of point in complex space
     double a=mapD(x,0,height/s,-2*scale+mX,2*scale+mX);
     double b=mapD(y,0,height/s,-2*scale+mY,2*scale+mY);
     
+    //checking if string for this point has a limit
     int n;
     double a1=a;
     double b1=b;
@@ -92,6 +96,7 @@ for(int x=0;x<width/s;x++)
     else
     c[x][y]=0;*/
     float bri = map(n,0,max,0,1);
+    //if it hadn't fill with black, if not map a color to it
     if(n==max)
     fill(0);
     else
@@ -113,7 +118,7 @@ void write()
   text(txt,10,15);
 }
 
-
+//fuction mapping double variables
 double mapD(int in, float a1, float b1, double a2, double b2)
 {
   double map=(in-a1)/(b1-a1)*(b2-a2);
