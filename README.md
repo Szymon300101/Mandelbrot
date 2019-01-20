@@ -11,7 +11,7 @@ Więcej o zbiorze Mandelbrota:
 https://pl.wikipedia.org/wiki/Zbiór_Mandelbrota  
   
 Poza podstawowym działaniem program posiada parę funkcji dostępnych z poziomu klawiatury:  
-- zmiana dokładności próbkowania (GÓRA/DÓŁ)  
+- zmiana dokładności próbkowania (GÓRA/DÓŁ - duży skok ; LEWO/PRAWO - mały skok)  
 - tryb podglądu (SPACJA - on/off ; -/+ - zmiana dokładności podglądu)  
 - printScreen (ENTER)  
 - zmiana skalowania kolorów ( [ / ] )  
